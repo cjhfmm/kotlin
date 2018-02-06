@@ -7,7 +7,7 @@ dependencies {
     compileOnly(project(":compiler:frontend"))
     compileOnly(project(":compiler:frontend.java"))
     compileOnly(project(":compiler:plugin-api"))
-    compileOnly(intellijCoreDep()) { includeJars("intellij-core") }
+    compile(intellijCoreDep()) { includeJars("intellij-core") }
     runtime(projectDist(":kotlin-stdlib"))
     runtime(projectDist(":kotlin-reflect"))
     runtime(projectRuntimeJar(":kotlin-compiler"))
@@ -17,7 +17,6 @@ dependencies {
     testCompile(project(":compiler:tests-common"))
     testCompile(projectTests(":compiler:tests-common"))
     testCompile(commonDep("junit:junit"))
-    testCompileOnly(intellijCoreDep()) { includeJars("intellij-core") }
 }
 
 sourceSets {
